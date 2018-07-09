@@ -24,7 +24,7 @@ class Client:
 
             for reader in readers:
                 if reader is self.socket:
-                    print(self.socket.recv(1024))
+                    print(">", self.socket.recv(1024).decode(), end='')
                 else:
                     msg = sys.stdin.readline()
                     self.socket.sendto(msg.encode(), self.server)
